@@ -5,6 +5,8 @@ const ProductList = () => {
         <div>
             Product List
            <Link to="/add-products"> <span> <button> Add Product </button> </span> </Link>
+        <div> <Link to="/update-product"> Product 1  </Link>  
+       <span> <Link to="/delete-product"> Delete </Link> </span>   </div> 
         </div>
     )
 }
