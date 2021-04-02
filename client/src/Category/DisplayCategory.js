@@ -2,10 +2,25 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './displaycategory.css';
 const DisplayCategory = (props) => {
+
+    const DeleteProduct =(ID) => {
+        console.log(ID)
+        fetch(`http://localhost:9700/deleteProduct/${ID}`,{
+            method:'DELETE',
+            headers:{
+                'Accept':'application/json',
+                'Content-Type':'application/json'
+            },
+            
+        })
+        
+    }
     const listProducts = ({productdata}) => {
+        console.log("Product Test>>>>",productdata._id)
         if(productdata){
             
             return productdata.map((item) => {
+                
                 return(
                     <div>
                         
@@ -23,9 +38,12 @@ const DisplayCategory = (props) => {
 
                                 </div>
                             </div> <br/> <br/>
-                       <Link to="/update-product"> <i class="fas fa-edit"></i> </Link>
-                       <Link to="/delete-product"> <i class="fas fa-trash-alt"></i></Link> 
+                       <Link to={`/update-product/${item._id}`}> <i class="fas fa-edit"></i> </Link>
+                        
+                       <button className="btn btn-primary" onClick={(ID) => DeleteProduct(item._id)}> Delete </button>
+                       
                         </div>
+                    
                      
                    </div>
                 )

@@ -51,7 +51,7 @@ class AddProducts extends Component{
             <div className="container">
                 <div className="panel panel-primary">
                     <div className="panel-heading">
-                    <h1> Update Product </h1>
+                    <h1> Add Product </h1>
                     </div>
                     <div className="panel-body">
                      <div className="form-group">
@@ -103,7 +103,7 @@ class AddProducts extends Component{
                                 <option value="65,000">65,000</option>
                             </select>
                         </div>
-                        <button className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
+                        <button className="btn btn-primary" onClick={this.handleSubmit}>Add Product</button>
                         <Link to="/" className="btn btn-success">Go back</Link> &nbsp;
                         
                     </div>

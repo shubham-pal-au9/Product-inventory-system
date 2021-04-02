@@ -5,7 +5,7 @@ import ProductList from '../Products/ProductList';
 import AddProducts from '../Products/AddProducts';
 import Home from '../Home/Home';
 import UpdateProducts from '../Products/UpdateProduct';
-import DeleteProduct from '../Products/DeleteProduct';
+
 
 function Routing() {
   return (
@@ -15,8 +15,8 @@ function Routing() {
           <Route path='/category' component={Category}/>
           <Route path='/product-list' component={ProductList}/>
           <Route path='/add-products' component={AddProducts}/>
-          <Route path='/update-product' component={UpdateProducts}/>
-          <Route path='/delete-product' component={DeleteProduct}/>
+          <Route path='/update-product/:id' component={UpdateProducts}/>
+          
       </div>
     </BrowserRouter>
   );
