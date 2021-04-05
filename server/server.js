@@ -24,7 +24,6 @@ app.get('/',(req,res) => {
     res.status(200).send("Health Ok")
 })
 
-
 //postUser
 app.post('/addProducts',(req,res)=>{
     dbobj.collection(col_name).insert(req.body,(err,result) => {

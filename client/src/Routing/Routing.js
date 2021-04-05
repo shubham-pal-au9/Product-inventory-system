@@ -1,7 +1,6 @@
 import React from 'react';
 import Category from '../Category/Category';
 import {BrowserRouter, Route} from 'react-router-dom';
-import ProductList from '../Products/ProductList';
 import AddProducts from '../Products/AddProducts';
 import Home from '../Home/Home';
 import UpdateProducts from '../Products/UpdateProduct';
@@ -13,7 +12,6 @@ function Routing() {
       <div>
           <Route exact path='/' component={Home}/>
           <Route path='/category' component={Category}/>
-          <Route path='/product-list' component={ProductList}/>
           <Route path='/add-products' component={AddProducts}/>
           <Route path='/update-product/:id' component={UpdateProducts}/>
           
