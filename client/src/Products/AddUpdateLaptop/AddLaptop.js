@@ -1,12 +1,14 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 
+const burl="http://localhost:9700/addProducts";
 
-class UpdateProduct extends Component{
+class AddLaptop extends Component{
     constructor(){
         super()
 
         this.state={
+        
             screeSize: sessionStorage.getItem('screeSize'),
             os:sessionStorage.getItem('os'),
             quality:sessionStorage.getItem('os'),
@@ -33,25 +35,23 @@ class UpdateProduct extends Component{
 
     handleSubmit =() => {
         console.log(this.state)
-        fetch(`http://localhost:9700/updateProducts/${this.props.match.params.id}`,{
-            method:'PUT',
+        fetch(burl,{
+            method:'POST',
             headers:{
                 'Accept':'application/json',
                 'Content-Type':'application/json'
             },
             body:JSON.stringify(this.state)
         })
-        .then(this.props.history.push('/'))
+        .then(this.props.history.push('/categorylaptop'))
     }
 
     render(){
         return(
-
             <div className="container">
-           
                 <div className="panel panel-primary">
                     <div className="panel-heading">
-                    <h1> Update Product </h1>
+                    <h1> Add Laptop's Product </h1>
                     </div>
                     <div className="panel-body">
                      <div className="form-group">
@@ -103,8 +103,8 @@ class UpdateProduct extends Component{
                                 <option value="65,000">65,000</option>
                             </select>
                         </div>
-                        <button className="btn btn-primary" onClick={this.handleSubmit}>Update Product</button>
-                        <Link to="/" className="btn btn-success">Go back</Link> &nbsp;
+                        <button className="btn btn-primary" onClick={this.handleSubmit}>Add Product</button>
+                        <Link to="/categorytv" className="btn btn-success">Go back</Link> &nbsp;
                         
                     </div>
                 </div>
@@ -115,4 +115,4 @@ class UpdateProduct extends Component{
 }
 
 
-export default UpdateProduct
+export default AddLaptop

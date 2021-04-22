@@ -1,9 +1,12 @@
-import React from 'react';
-import Category from '../Category/Category';
+import React, { Fragment } from 'react';
+import MainCategory from '../Category/MainCategory';
+
 
 function Home() {
   return (
-    <Category/>
+    <Fragment>
+      <MainCategory/>
+    </Fragment>
   );
 }
 

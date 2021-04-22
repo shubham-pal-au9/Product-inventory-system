@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
-import DisplayCategory from './DisplayCategory';
-import './category.css';
+import DisplayCategory from './DisplayCategoryLaptop';
+import './categorylaptop.css';
 
 const FetchUrl ="http://localhost:9700/allProducts"
 
-class Category extends Component{
+class CategoryLaptop extends Component{
     constructor(){
         super()
 
@@ -30,4 +30,4 @@ class Category extends Component{
     }
 }
 
-export default Category;
+export default CategoryLaptop;

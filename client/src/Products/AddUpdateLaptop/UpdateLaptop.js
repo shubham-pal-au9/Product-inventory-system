@@ -1,14 +1,12 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 
-const burl="http://localhost:9700/addProducts";
 
-class AddProducts extends Component{
+class UpdateLaptop extends Component{
     constructor(){
         super()
 
         this.state={
-        
             screeSize: sessionStorage.getItem('screeSize'),
             os:sessionStorage.getItem('os'),
             quality:sessionStorage.getItem('os'),
@@ -35,23 +33,25 @@ class AddProducts extends Component{
 
     handleSubmit =() => {
         console.log(this.state)
-        fetch(burl,{
-            method:'POST',
+        fetch(`http://localhost:9700/updateProducts/${this.props.match.params.id}`,{
+            method:'PUT',
             headers:{
                 'Accept':'application/json',
                 'Content-Type':'application/json'
             },
             body:JSON.stringify(this.state)
         })
-        .then(this.props.history.push('/'))
+        .then(this.props.history.push('/categorylaptop'))
     }
 
     render(){
         return(
+
             <div className="container">
+           
                 <div className="panel panel-primary">
                     <div className="panel-heading">
-                    <h1> Add Product </h1>
+                    <h1> Update Laptop's Product </h1>
                     </div>
                     <div className="panel-body">
                      <div className="form-group">
@@ -103,8 +103,8 @@ class AddProducts extends Component{
                                 <option value="65,000">65,000</option>
                             </select>
                         </div>
-                        <button className="btn btn-primary" onClick={this.handleSubmit}>Add Product</button>
-                        <Link to="/" className="btn btn-success">Go back</Link> &nbsp;
+                        <button className="btn btn-primary" onClick={this.handleSubmit}>Update Product</button>
+                        <Link to="/categorytv" className="btn btn-success">Go back</Link> &nbsp;
                         
                     </div>
                 </div>
@@ -115,4 +115,4 @@ class AddProducts extends Component{
 }
 
 
-export default AddProducts
+export default UpdateLaptop

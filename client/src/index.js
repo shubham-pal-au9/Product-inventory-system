@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Routing from './Routing/Routing';
+import Header from './Header/header';
+import Footer from './Footer/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Header/>
     <Routing />
+    <Footer/>
   </React.StrictMode>,
   document.getElementById('root')
 );

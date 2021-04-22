@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './displaycategory.css';
-const DisplayCategory = (props) => {
+import './displaycategorytv.css';
+const DisplayCategoryTV = (props) => {
 
     const DeleteProduct =(ID) => {
         console.log(ID)
@@ -22,28 +22,41 @@ const DisplayCategory = (props) => {
             return productdata.map((item) => {
                 
                 return(
+                    
                     <div>
-                        
-                        <div className="tileContainer">
-                            <div className="tileComponent1">
-                                <img src={item.images}/>
-                            </div>
+                       
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                 <div className="tileContainer">
+                            
                             <div className="tileComponent2">
-                                <div className="componentHeading">
+                                <div className="componentHeading text-right">
                                     {item.name}
                                 </div>
-                                <div className="componentSubHeading">
+                                <div className="componentSubHeading text-center">
                                    {item.os} TV <br/> <br/>
                                    INR: {item.price}
 
                                 </div>
                             </div> <br/> <br/>
-                       <Link to={`/update-product/${item._id}`}> <i class="fas fa-edit"></i> </Link>
+                      
                         
-                       <button className="btn btn-primary" onClick={(ID) => DeleteProduct(item._id)}> Delete </button>
                        
                         </div>
-                    
+                                </div>
+                                <div class="col-2">
+                                 <Link to={`/update-tv/${item._id}`}> <button className="btn btn-primary">Edit</button> </Link>
+                        
+                                </div>
+                                <div class="col">
+                               <button className="btn btn-danger" onClick={(ID) => DeleteProduct(item._id)}> Delete </button>
+                                </div>
+
+                                
+                            </div>
+                        </div>
                      
                    </div>
                 )
@@ -55,18 +68,21 @@ const DisplayCategory = (props) => {
         <div>
             <div className="quickSearchContainer">
                 <p className="quickSearchHeading">
-                    List of Products
+                    List of TV Products
                 </p> 
                 
-                <Link to="/add-products" className="btn btn-primary">Add Product</Link> <br/> <br/>
+                <Link to="/add-tv" className="btn btn-primary">Add Product</Link> <br/> <br/>
                 <p className="quickSearchSubHeading">
                     Television
                 </p>
                 <br/>
                 {listProducts(props)}
+                <Link to="/" className="btn btn-success">Go Back</Link>
             </div>
+            
+          
         </div>
     )
 }
 
-export default DisplayCategory;
+export default DisplayCategoryTV;
