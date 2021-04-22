@@ -113,6 +113,15 @@ app.put('/updateMobile/:_id',(req,res) => {
     )
 })
 
+//Delete
+app.delete('/deleteMobile/:_id',(req,res) => {
+    let Id = mongo.ObjectID(req.params._id);
+    dbobj.collection(col_mobile).remove({_id:Id},(err,result) => {
+        if(err) throw err;
+        res.send("Data Deleted")
+    })
+});
+
 //----------------------Laptop Api----------------------------------//
 
 //get Mobile
@@ -151,6 +160,15 @@ app.put('/updateLaptop/:_id',(req,res) => {
     )
 })
 
+//Delete
+app.delete('/deleteLaptop/:_id',(req,res) => {
+    let Id = mongo.ObjectID(req.params._id);
+    dbobj.collection(col_laptop).remove({_id:Id},(err,result) => {
+        if(err) throw err;
+        res.send("Data Deleted")
+    })
+});
+
 //----------------------Watches Api----------------------------------//
 
 //get Mobile
@@ -187,6 +205,14 @@ app.put('/updateWatch/:_id',(req,res) => {
         }
     )
 })
+
+app.delete('/deleteWatch/:_id',(req,res) => {
+    let Id = mongo.ObjectID(req.params._id);
+    dbobj.collection(col_watch).remove({_id:Id},(err,result) => {
+        if(err) throw err;
+        res.send("Data Deleted")
+    })
+});
 
 
 
