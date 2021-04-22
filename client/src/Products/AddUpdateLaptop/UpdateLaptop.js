@@ -7,25 +7,25 @@ class UpdateLaptop extends Component{
         super()
 
         this.state={
-            screeSize: sessionStorage.getItem('screeSize'),
+            name: sessionStorage.getItem('name'),
             os:sessionStorage.getItem('os'),
-            quality:sessionStorage.getItem('os'),
-            frameRate:sessionStorage.getItem('frameRate'),
+            ram:sessionStorage.getItem('ram'),
+            memory:sessionStorage.getItem('memory'),
             price:sessionStorage.getItem('price'),
         }
     }
 
-    handleChangescreeSize = (event) => {
-        this.setState({screeSize:event.target.value})
+    handleChangename = (event) => {
+        this.setState({name:event.target.value})
     }
     handleChangeos = (event) => {
         this.setState({os:event.target.value})
     }
-    handleChangequality = (event) => {
-        this.setState({quality:event.target.value})
+    handleChangeram = (event) => {
+        this.setState({ram:event.target.value})
     }
-    handleChangeframeRate = (event) => {
-        this.setState({frameRate:event.target.value})
+    handleChangememory = (event) => {
+        this.setState({memory:event.target.value})
     }
     handleChangeprice = (event) => {
         this.setState({price:event.target.value})
@@ -33,7 +33,7 @@ class UpdateLaptop extends Component{
 
     handleSubmit =() => {
         console.log(this.state)
-        fetch(`http://localhost:9700/updateProducts/${this.props.match.params.id}`,{
+        fetch(`http://localhost:9700/updateLaptop/${this.props.match.params.id}`,{
             method:'PUT',
             headers:{
                 'Accept':'application/json',
@@ -46,25 +46,23 @@ class UpdateLaptop extends Component{
 
     render(){
         return(
-
             <div className="container">
-           
                 <div className="panel panel-primary">
                     <div className="panel-heading">
                     <h1> Update Laptop's Product </h1>
                     </div>
                     <div className="panel-body">
                      <div className="form-group">
-                            <label className="control-label">Screen Size:</label>
+                            <label className="control-label">Name:</label>
                            
                             
                             
-                <select onChange={this.handleChangescreeSize} class="form-control" id="exampleFormControlSelect1">
+                <select onChange={this.handleChangename} class="form-control" id="exampleFormControlSelect1">
                 <option 
-                value="40inch">40inch</option>
-                <option value="43inch">43inch</option>
-                <option value="50inch">50inch</option> 
-                <option value="55inch">55inch</option>
+                value="Acer">Acer</option>
+                <option value="Dell">Dell</option>
+                <option value="HP">HP</option> 
+                <option value="Lenovo">Lenovo</option>
                 </select>
 
             
@@ -72,25 +70,25 @@ class UpdateLaptop extends Component{
                         <div className="form-group">
                         <label className="control-label">OS:</label>
                            <select onChange={this.handleChangeos} class="form-control" id="exampleFormControlSelect1">
-                            <option value="Android">Android</option>
-                            <option value="Tizen">Tizen</option>
-                            <option value="WebOS">WebOS</option>
-                            <option value="tvOS">tvOS</option>
+                            <option value="Windows">Windows</option>
+                            <option value="MacOS">MacOS</option>
+                            <option value="Linux">Linux</option>
+                            <option value="Solaris">Solaris</option>
                             </select>
                         </div>
                         <div className="form-group">
-                        <label className="control-label">Quality:</label>
-                            <select onChange={this.handleChangequality} class="form-control" id="exampleFormControlSelect1">
-                            <option value="4K">4K</option>
-							<option value="8K">8K</option>
+                        <label className="control-label">RAM:</label>
+                            <select onChange={this.handleChangeram} class="form-control" id="exampleFormControlSelect1">
+                            <option value="4K">4GB</option>
+							<option value="8K">8Gb</option>
                             </select>
                         </div>
 
                         <div className="form-group">
-                            <label className="control-label">Frame Rate</label>
-                            <select onChange={this.handleChangeframeRate} class="form-control" id="exampleFormControlSelect1">
-                            <option value="1024ghz">1024ghz</option>
-                            <option value="720ghz">720ghz</option>
+                            <label className="control-label">Memory</label>
+                            <select onChange={this.handleChangememory} class="form-control" id="exampleFormControlSelect1">
+                            <option value="500GB">500GB</option>
+                            <option value="1TB">1TB</option>
                             </select>
                         </div>
 
@@ -104,7 +102,7 @@ class UpdateLaptop extends Component{
                             </select>
                         </div>
                         <button className="btn btn-primary" onClick={this.handleSubmit}>Update Product</button>
-                        <Link to="/categorytv" className="btn btn-success">Go back</Link> &nbsp;
+                        <Link to="/categorylaptop" className="btn btn-success">Go back</Link> &nbsp;
                         
                     </div>
                 </div>

@@ -5,7 +5,7 @@ const DisplayCategoryLaptop = (props) => {
 
     const DeleteProduct =(ID) => {
         console.log(ID)
-        fetch(`http://localhost:9700/deleteProduct/${ID}`,{
+        fetch(`http://localhost:9700/deleteLaptop/${ID}`,{
             method:'DELETE',
             headers:{
                 'Accept':'application/json',
@@ -25,7 +25,6 @@ const DisplayCategoryLaptop = (props) => {
                     
                     <div>
                        
-
                         <div class="container">
                             <div class="row">
                                 <div class="col">
@@ -33,11 +32,14 @@ const DisplayCategoryLaptop = (props) => {
                             
                             <div className="tileComponent2">
                                 <div className="componentHeading text-right">
-                                    {item.name}
+                                    Name:{item.name}
                                 </div>
                                 <div className="componentSubHeading text-center">
-                                   {item.os} TV <br/> <br/>
-                                   INR: {item.price}
+                                  OS: {item.os}<br/> <br/>   
+                                </div>
+                                <div className="componentSubHeading text-center">
+                                  INR: {item.price}<br/> <br/>
+                                   
 
                                 </div>
                             </div> <br/> <br/>

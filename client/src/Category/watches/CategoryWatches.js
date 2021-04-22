@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import DisplayCategory from './DisplayCategoryWatches';
 import './categorywatches.css';
 
-const FetchUrl ="http://localhost:9700/allProducts"
+const FetchUrl ="http://localhost:9700/allWatches"
 
 class CategoryWatches extends Component{
     constructor(){

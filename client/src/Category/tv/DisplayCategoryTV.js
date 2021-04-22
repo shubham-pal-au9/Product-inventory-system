@@ -33,11 +33,11 @@ const DisplayCategoryTV = (props) => {
                             
                             <div className="tileComponent2">
                                 <div className="componentHeading text-right">
-                                    {item.name}
+                                    Quality:{item.quality}
                                 </div>
                                 <div className="componentSubHeading text-center">
-                                   {item.os} TV <br/> <br/>
-                                   INR: {item.price}
+                                    OS:{item.os} <br/> <br/>
+                                    INR: {item.price}
 
                                 </div>
                             </div> <br/> <br/>

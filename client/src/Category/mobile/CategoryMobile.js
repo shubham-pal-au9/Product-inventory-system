@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import DisplayCategory from './DisplayCategoryMobile';
 import './categorymobile.css';
 
-const FetchUrl ="http://localhost:9700/allProducts"
+const FetchUrl ="http://localhost:9700/allMobiles"
 
 class CategoryMobile extends Component{
     constructor(){

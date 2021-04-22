@@ -56,9 +56,7 @@ class AddTV extends Component{
                     <div className="panel-body">
                      <div className="form-group">
                             <label className="control-label">Screen Size:</label>
-                           
-                            
-                            
+                                      
                 <select onChange={this.handleChangescreeSize} class="form-control" id="exampleFormControlSelect1">
                 <option 
                 value="40inch">40inch</option>

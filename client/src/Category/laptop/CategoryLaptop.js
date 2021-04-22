@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import DisplayCategory from './DisplayCategoryLaptop';
 import './categorylaptop.css';
 
-const FetchUrl ="http://localhost:9700/allProducts"
+const FetchUrl ="http://localhost:9700/allLaptop"
 
 class CategoryLaptop extends Component{
     constructor(){
